@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AppConfig>
+    <VisionSystems>
+        <VisionSystem>
+            <Name>Cam1vs</Name>
+            <Type>Default</Type>
+            <IP>admin:123456@192.168.0.100:554</IP>
+            <X>0</X>
+            <Y>0</Y>
+            <W>2</W>
+            <L>2</L>
+        </VisionSystem>
+        <VisionSystem>
+            <Name>Cam2vs</Name>
+            <Type>Default</Type>
+            <IP>admin:123456@192.168.0.200:554</IP>
+            <X>0</X>
+            <Y>0</Y>
+            <W>2</W>
+            <L>2</L>
+        </VisionSystem>
+    </VisionSystems>
+</AppConfig>

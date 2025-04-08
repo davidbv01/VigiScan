@@ -1,0 +1,32 @@
+# Ignore Visual Studio files
+.vs/
+.vscode/
+# Ignore build directory (where build files are generated)
+build/
+# Ignore libraries (if they are local and not necessary to track)
+Libs/
+# Ignore output files (like model files or generated binaries)
+*.bin
+# Ignore system files (e.g., Thumbs.db, .DS_Store)
+.DS_Store
+Thumbs.db
+# Ignore compiled object files
+*.obj
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.out
+# Ignore IDE specific files
+.idea/
+*.user
+*.userosscache
+*.suo
+*.sln
+*.xcodeproj
+# Ignore temporary files
+*.tmp
+*.log
+*.bak
+*.swp
