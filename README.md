@@ -1,31 +1,24 @@
 # AI-Powered Image Processing & RamDisk Cleaner
 
-Welcome to this repository, where AI meets optimization! 🚀 This project integrates two powerful modules:
+Welcome to this repository, where AI meets optimization! 🚀 This project integrates YOLO_V8 image processing with a highly scalable architecture, offering a powerful solution for object detection and system storage management.
 
-1. **YOLO Object Detection**: An AI-powered image processing module that detects objects using YOLO_V8, draws bounding boxes around detected items, and saves the images for further analysis.
-   
-2. **RamDisk Cleaner**: A utility that keeps your system running smoothly by automatically cleaning old files from your RamDisk (or any specified directories) based on an age threshold.
+## 🌟 Scalable Architecture
+One of the standout features of this project is its scalable and modular architecture. The system is designed to handle increasing complexity, making it suitable for large-scale deployments.
 
-## 🚀 Project Overview
+CentralUnit: Governs the entire process flow, ensuring that each part of the system operates efficiently and communicates effectively. This central management allows the system to scale and adapt to various use cases without major redesigns.
 
-This repository consists of two key components:
+AcquisitionUnits: These units are responsible for acquiring images from different sources (e.g., cameras) and passing them to the ImageBuffer.
 
-### 1. **Image Processing with YOLO (You Only Look Once)**
+ImageBuffer: The buffer manages a queue of images, acting as a mediator between the acquisition process and the processing module. It ensures that images are processed in the correct order, optimizing performance.
 
-- This module utilizes a pre-trained YOLO_V8 model to perform real-time object detection in images. It automatically draws bounding boxes around detected objects and saves the processed images with unique filenames based on the timestamp.
-  
-  #### Key Functions:
-  - **`Process(cv::Mat& frame, int cameraID)`**: This function processes an image, performs object detection using the YOLO_V8 model, and draws bounding boxes on detected objects.
-  - **`saveImage(const cv::Mat& image)`**: Saves the processed image to a specified directory with a unique filename that includes the current timestamp.
-  - **`ReadCocoYaml(YOLO_V8*& p)`**: Reads a YAML file containing the class names that the YOLO model should recognize.
+ProcessingModule (YOLO Detection): This module takes the images from the buffer and performs the object detection process using YOLO. It processes images one at a time, detecting objects and drawing bounding boxes, ensuring that even with high volumes of images, the system can scale efficiently.
 
-### 2. **RamDisk Cleaner**
+Why is this architecture scalable?
+Centralized control (via CentralUnit) means that additional AcquisitionUnits, ImageBuffers, or even ProcessingModules can be added easily without disrupting the entire system.
 
-- This module helps you optimize your storage by cleaning old files from a RamDisk or specified directories based on a configurable age limit. It runs in the background and ensures your system doesn’t accumulate outdated files.
+You can add more image sources or detection tasks and distribute the workload across multiple modules. As the number of cameras or detection units grows, the system continues to perform without significant performance degradation.
 
-  #### Key Features:
-  - **`startCleaning()`**: Starts the cleaning process by running in a loop, checking and removing files that are older than the defined age limit.
-  - **`cleanOldFiles()`**: Scans specified directories and removes files that exceed the specified age threshold.
+The image processing pipeline is highly decoupled, which means that parts of the system can be upgraded or replaced independently, keeping the architecture flexible and adaptable to future requirements.
 
 ## 🛠 Installation
 
